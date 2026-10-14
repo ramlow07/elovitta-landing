@@ -21,7 +21,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* Foundation */
 :root {
@@ -35,9 +35,7 @@
   --ink: #291533;
   --slate: #716478;
   --line: #e5d9ea;
-  --serif: "Source Serif 4", Georgia, serif;
-  --sans: "Inter", sans-serif;
-  --mono: "IBM Plex Mono", monospace;
+  --sans: "Poppins", "Helvetica Neue", Arial, sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -91,7 +89,7 @@ select:focus-visible {
   padding-inline: 48px;
 }
 .eyebrow {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 11px;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -111,10 +109,10 @@ select:focus-visible {
 h1,
 h2,
 h3 {
-  font-family: var(--serif);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.045em;
+  font-family: var(--sans);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
 }
 p {
   font-size: 15px;
@@ -214,7 +212,7 @@ nav .wrap {
   display: flex;
   align-items: center;
   gap: 9px;
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 31px;
   font-weight: 600;
   letter-spacing: -1.3px;
@@ -318,12 +316,13 @@ nav .wrap {
 }
 .hero h1 {
   font-size: clamp(44px, 4.9vw, 65px);
-  line-height: 1.04;
+  line-height: 1.12;
   margin-bottom: 26px;
 }
 .hero h1 em {
   color: #ff9fc6;
-  font-weight: 400;
+  font-style: normal;
+  font-weight: 700;
 }
 .hero p.lead {
   font-size: 15px;
@@ -431,7 +430,7 @@ nav .wrap {
   transform: rotate(-2deg);
 }
 .gauge-card .cap {
-  font: 9px var(--mono);
+  font: 9px var(--sans);
   letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--purple);
@@ -447,7 +446,7 @@ nav .wrap {
   color: #c9aed5;
 }
 .gauge-card .fator {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 24px;
   line-height: 1.2;
   letter-spacing: -0.025em;
@@ -467,7 +466,7 @@ nav .wrap {
 .gauge-labels {
   display: flex;
   justify-content: space-between;
-  font: 6px var(--mono);
+  font: 6px var(--sans);
   color: #75617f;
   margin-bottom: 23px;
 }
@@ -483,7 +482,7 @@ nav .wrap {
   color: #74607d;
 }
 .gauge-row .v {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 12px;
 }
 .gauge-row:last-of-type .v {
@@ -524,7 +523,7 @@ nav .wrap {
   padding-right: 0;
 }
 .stat .num {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 45px;
   line-height: 1.1;
   letter-spacing: -0.04em;
@@ -542,8 +541,15 @@ nav .wrap {
 }
 .step-card {
   position: relative;
+  transition: scale 0.25s ease;
   padding-top: 25px;
   border-top: 1px solid #d9c3e3;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .step-card:hover {
+    scale: 1.04;
+    z-index: 1;
+  }
 }
 .step-card:not(:last-child)::after {
   content: "→";
@@ -556,7 +562,7 @@ nav .wrap {
   font-size: 20px;
 }
 .step-card .n {
-  font: 11px var(--mono);
+  font: 11px var(--sans);
   color: var(--purple);
   margin-bottom: 23px;
 }
@@ -610,13 +616,13 @@ nav .wrap {
   border-left: 1px solid #ffffff18;
 }
 .compare-row.head > div {
-  font: 10px var(--mono);
+  font: 10px var(--sans);
   letter-spacing: 0.035em;
   color: #cbb5d4;
   padding-block: 20px;
 }
 .compare-row.head > div:last-child {
-  font: 600 25px var(--serif);
+  font: 600 25px var(--sans);
   color: #fff;
 }
 .compare-row .old {
@@ -692,12 +698,25 @@ nav .wrap {
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
-.care-art {
-  margin-top: 35px;
-  width: 225px;
-  height: 125px;
-  color: var(--purple);
-  opacity: 0.85;
+.care-photo {
+  margin-top: 30px;
+}
+.care-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.care-photo figcaption {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--slate);
+}
+.care-photo-credit {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
 }
 /* Plans */
 #precos {
@@ -715,8 +734,14 @@ nav .wrap {
 #precos .section-head p {
   margin-inline: auto;
 }
+#precos .grid-3 {
+  gap: 32px;
+  padding-block: 18px;
+}
 .price-card {
   position: relative;
+  scale: var(--card-scale, 1);
+  transition: scale 0.25s ease, box-shadow 0.25s ease;
   padding: 35px 27px 33px;
   border: 1px solid #d9c8e1;
   background: #faf6fc;
@@ -743,7 +768,8 @@ nav .wrap {
   padding: 5px 12px;
 }
 .plano {
-  font-family: var(--serif);
+  font-family: var(--sans);
+  font-weight: 600;
   font-size: 29px;
   letter-spacing: -0.04em;
   margin-bottom: 9px;
@@ -760,7 +786,8 @@ nav .wrap {
   color: #dcc4e5;
 }
 .valor {
-  font-family: var(--serif);
+  font-family: var(--sans);
+  font-weight: 600;
   font-size: 56px;
   line-height: 1.1;
   letter-spacing: -0.055em;
@@ -770,6 +797,7 @@ nav .wrap {
   display: block;
   font-family: var(--sans);
   font-size: 12px;
+  font-weight: 400;
   letter-spacing: 0;
   margin-top: 8px;
   color: var(--slate);
@@ -792,6 +820,7 @@ nav .wrap {
   display: grid;
   gap: 14px;
   margin-top: 24px;
+  margin-bottom: 28px;
 }
 .price-card li {
   font-size: 13px;
@@ -805,6 +834,67 @@ nav .wrap {
 }
 .featured li::before {
   color: #ff9fc6;
+}
+.price-card .btn {
+  width: 100%;
+  margin-top: auto;
+  padding-inline: 12px;
+  gap: 8px;
+  font-size: 12px;
+  background: var(--purple-deep);
+  color: #fff;
+}
+.price-card .btn:hover {
+  background: var(--purple-mid);
+}
+.price-card.featured .btn {
+  background: #ffb6d2;
+  color: var(--purple-deep);
+}
+.price-card.featured .btn:hover {
+  background: #ffd0e3;
+}
+@media (min-width: 901px) {
+  .price-card.featured {
+    --card-scale: 1.045;
+    z-index: 1;
+  }
+}
+@media (min-width: 901px) and (prefers-reduced-motion: no-preference) {
+  .price-card:focus-within {
+    --card-scale: 1.025;
+    z-index: 2;
+    box-shadow: 0 24px 44px #4b036925;
+  }
+  .price-card.featured:focus-within {
+    --card-scale: 1.075;
+  }
+}
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .price-card:hover {
+    --card-scale: 1.025;
+    z-index: 2;
+    box-shadow: 0 24px 44px #4b036925;
+  }
+  .price-card.featured:hover {
+    --card-scale: 1.075;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .step-card,
+  .price-card,
+  .btn {
+    transition: none;
+  }
+  #hero-canvas {
+    display: none;
+  }
+  .signal-field .signal-fallback {
+    opacity: 0.65;
+  }
 }
 /* Guide */
 .guide-section {
@@ -1084,6 +1174,20 @@ footer .wrap > div:last-child {
     padding-inline: 22px;
   }
 }
+@media (max-width: 900px) {
+  #precos .grid-3 {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-inline: auto;
+    gap: 28px;
+  }
+  #precos .price-card {
+    padding: 32px 28px;
+  }
+  #precos .price-card.featured {
+    padding-block: 46px;
+  }
+}
 @media (max-width: 800px) {
   section {
     padding: 80px 0;
@@ -1162,8 +1266,8 @@ footer .wrap > div:last-child {
   #bem-estar .section-head {
     max-width: 600px;
   }
-  .care-art {
-    display: none;
+  .care-photo {
+    max-width: 520px;
   }
   #bem-estar .grid-4 {
     gap: 35px;
@@ -1757,7 +1861,11 @@ footer .wrap > div:last-child {
     <div class="section-head">
       <div class="eyebrow">Plano de ação</div>
       <h2>Diagnosticar não basta — a norma pede ação</h2>
-      <p>Depois do diagnóstico, os colaboradores têm acesso direto aos programas de bem-estar — e cada solicitação vira evidência do plano de ação no PGR.</p><svg class="care-art" viewBox="0 0 250 130" fill="none" aria-hidden="true"><path d="M0 66h50l15-24 21 50 23-73 24 90 20-43h97" stroke="#8A05BE" stroke-width="1.2"/><circle cx="126" cy="65" r="57" stroke="#d9bde7"/><circle cx="126" cy="65" r="42" stroke="#e6d1ee"/><circle cx="153" cy="66" r="5" fill="#ff4d8d"/></svg>
+      <p>Depois do diagnóstico, os colaboradores têm acesso direto aos programas de bem-estar — e cada solicitação vira evidência do plano de ação no PGR.</p>
+      <figure class="care-photo">
+        <img src="../../site/assets/equipe-bem-estar.webp" width="1000" height="667" loading="lazy" decoding="async" alt="Colegas reunidos ao redor de uma mesa, conversando e trabalhando juntos em um ambiente iluminado.">
+        <figcaption>Cuidar de quem faz a empresa acontecer.<span class="care-photo-credit">Foto ilustrativa: <a href="https://unsplash.com/photos/g1Kr4Ozfoac" target="_blank" rel="noopener">Brooke Cagle / Unsplash</a></span></figcaption>
+      </figure>
     </div>
     <div class="grid-4">
       <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v5a4 4 0 0 0 8 0V3M4 3h4m4 0h4M10 12v3a5 5 0 0 0 10 0v-2"/><circle cx="20" cy="11" r="2"/></svg></div><h3>Telemedicina</h3><p>Consulta médica por vídeo para atestados, orientação e sintomas leves.</p></div>
@@ -1786,6 +1894,7 @@ footer .wrap > div:last-child {
           <li>Matriz oficial de risco</li>
           <li>PGR pronto para auditoria</li>
         </ul>
+        <a class="btn" href="#contato" aria-label="Quero o plano Essencial — ir para o formulário">Quero o Essencial</a>
       </div>
       <div class="price-card featured">
         <div class="price-badge">Mais escolhido</div>
@@ -1798,6 +1907,7 @@ footer .wrap > div:last-child {
           <li>Telemedicina e psicologia inclusas</li>
           <li>Canal de escuta e relatório por setor</li>
         </ul>
+        <a class="btn" href="#contato" aria-label="Quero o plano Crescimento — ir para o formulário">Quero o Crescimento</a>
       </div>
       <div class="price-card">
         <div class="plano">Corporativo</div>
@@ -1809,6 +1919,7 @@ footer .wrap > div:last-child {
           <li>Multi-unidade e multi-CNPJ</li>
           <li>SLA dedicado e API própria</li>
         </ul>
+        <a class="btn" href="#contato" aria-label="Quero o plano Corporativo — ir para o formulário">Quero o Corporativo</a>
       </div>
     </div>
   </div>
@@ -1988,8 +2099,8 @@ document.getElementById('leadForm').addEventListener('submit', function (e) {
     }, {threshold: 0.05}).observe(document.getElementById('leadForm'));
   }
 
-  // Optional GPU illustration. Signals resolve into ordered strands over 4.2s,
-  // then stop. Active time advances only while this illustration is visible.
+  // Optional GPU illustration. Signals move continuously in a seamless loop.
+  // Active time advances only while this illustration is visible.
   // The SVG underneath is the complete fallback, including for reduced motion.
   const canvas = document.getElementById('hero-canvas');
   const field = canvas.parentElement;
@@ -2000,7 +2111,7 @@ document.getElementById('leadForm').addEventListener('submit', function (e) {
     lost = false,
     elapsed = 0,
     previous = 0;
-  const duration = 4200;
+  const duration = 24000;
   if (reduceMotion.matches) return;
   try {
     gl = canvas.getContext('webgl', {
@@ -2016,16 +2127,17 @@ document.getElementById('leadForm').addEventListener('submit', function (e) {
   const vertexSource = `
     attribute vec2 seed;
     uniform float progress;
+    uniform float phase;
     uniform float ratio;
 
     varying float tint;
     void main() {
       float x = seed.x;
       float row = seed.y;
-      float wave = sin(x * 7.0 + row * 3.0) * .23 + cos(x * 3.0 - row * 6.0) * .16;
-      float ordered = sin(x * 3.8) * .25 + row * .60;
+      float wave = sin(x * 7.0 + row * 3.0 + phase) * .23 + cos(x * 3.0 - row * 6.0 - phase) * .16;
+      float ordered = sin(x * 3.8 + phase) * .25 + row * .60;
       float y = mix(wave + row * .68, ordered, progress);
-      float z = cos(x * 4.0 + row * 2.0);
+      float z = cos(x * 4.0 + row * 2.0 + phase);
       gl_Position = vec4(x, y, 0.0, 1.0);
       gl_PointSize = (1.4 + (z + 1.0) * .55) * ratio;
       tint = (row + 1.0) * .5;
@@ -2075,13 +2187,15 @@ document.getElementById('leadForm').addEventListener('submit', function (e) {
   gl.enableVertexAttribArray(seed);
   gl.vertexAttribPointer(seed, 2, gl.FLOAT, false, 0, 0);
   const progressUniform = gl.getUniformLocation(program, 'progress');
+  const phaseUniform = gl.getUniformLocation(program, 'phase');
   const ratioUniform = gl.getUniformLocation(program, 'ratio');
   gl.enable(gl.BLEND);
   gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
   function draw() {
     if (lost || reduceMotion.matches) return;
-    const t = Math.min(elapsed / duration, 1);
-    gl.uniform1f(progressUniform, t * t * (3 - 2 * t));
+    const phase = (elapsed / duration) * Math.PI * 2;
+    gl.uniform1f(phaseUniform, phase);
+    gl.uniform1f(progressUniform, (1 - Math.cos(phase)) / 2);
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.drawArrays(gl.POINTS, 0, points.length / 2);
   }
@@ -2114,16 +2228,15 @@ document.getElementById('leadForm').addEventListener('submit', function (e) {
     if (!previous) previous = now;
     // Limit GPU draws to 30fps; a hidden tab never accumulates elapsed time.
     if (now - previous >= 32) {
-      elapsed = Math.min(duration, elapsed + Math.min(now - previous, 80));
+      elapsed = (elapsed + Math.min(now - previous, 80)) % duration;
       previous = now;
       draw();
     }
-    if (elapsed < duration) frame = requestAnimationFrame(tick);
+    frame = requestAnimationFrame(tick);
   }
   function start() {
     if (
       !frame &&
-      elapsed < duration &&
       visible &&
       !document.hidden &&
       !lost &&
