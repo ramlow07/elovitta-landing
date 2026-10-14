@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EloVita — Gestão de riscos psicossociais para a NR-1</title>
+<meta name="description" content="Diagnóstico, plano de ação e PGR pronto. Sem equipamento, sem complicação — conformidade com a NR-1 em semanas, com telemedicina e psicologia incluídas.">
+
+<!-- Open Graph / preview em redes sociais (WhatsApp, Instagram, Facebook, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="EloVita — NR-1 sem complicação">
+<meta property="og:description" content="Diagnóstico de riscos psicossociais, plano de ação com telemedicina e psicologia, e PGR pronto para auditoria. Sem comprar equipamento.">
+<meta property="og:image" content="https://elovita.com.br/og-image.jpg">
+<meta property="og:url" content="https://elovita.com.br">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EloVita — NR-1 sem complicação">
+<meta name="twitter:description" content="Diagnóstico, plano de ação e PGR pronto para sua empresa cumprir a NR-1.">
+<meta name="twitter:image" content="https://elovita.com.br/og-image.jpg">
+<!-- Nota de implementação: og-image.jpg (1200x630px) e o domínio elovita.com.br são placeholders — trocar antes de publicar. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Foundation */
+:root {
+  --purple: #8a05be;
+  --purple-deep: #4b0369;
+  --purple-mid: #6b0796;
+  --purple-tint: #f5e9fb;
+  --pink: #ff4d8d;
+  --paper: #fff;
+  --mist: #faf6fc;
+  --ink: #291533;
+  --slate: #716478;
+  --line: #e5d9ea;
+  --serif: "Source Serif 4", Georgia, serif;
+  --sans: "Inter", sans-serif;
+  --mono: "IBM Plex Mono", monospace;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 104px;
+}
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--mist);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+::selection {
+  background: #ffc4dc;
+  color: #4b0369;
+}
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+a {
+  color: inherit;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button,
+a,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 5px;
+}
+.wrap {
+  max-width: 1240px;
+  margin: auto;
+  padding-inline: 48px;
+}
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--pink);
+  flex-shrink: 0;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+p {
+  font-size: 15px;
+}
+section {
+  padding: 112px 0;
+}
+.section-head {
+  margin-bottom: 54px;
+  max-width: 720px;
+}
+.section-head .eyebrow {
+  color: var(--purple);
+  margin-bottom: 20px;
+}
+.section-head h2 {
+  font-size: clamp(35px, 3.9vw, 52px);
+}
+.section-head p {
+  max-width: 600px;
+  margin-top: 22px;
+  color: var(--slate);
+  line-height: 1.8;
+}
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  min-height: 50px;
+  padding: 14px 22px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.btn::after {
+  content: "↗";
+  font-size: 19px;
+  line-height: 1;
+  font-weight: 400;
+}
+.btn:hover {
+  transform: translateY(-3px);
+}
+.btn-primary {
+  background: #fff;
+  color: var(--purple-deep);
+}
+.btn-primary:hover {
+  background: #f5e9fb;
+  box-shadow: 0 7px 24px #1b003a18;
+}
+.btn-ghost {
+  color: #fff;
+  border-color: #ffffff40;
+  background: transparent;
+}
+.btn-ghost:hover {
+  background: #ffffff12;
+}
+.btn-pink {
+  background: var(--pink);
+  color: #32113f;
+}
+.btn-pink:hover {
+  background: #ff79a9;
+}
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+/* Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: #faf6fc;
+  border-bottom: 1px solid var(--line);
+}
+nav .wrap {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--serif);
+  font-size: 31px;
+  font-weight: 600;
+  letter-spacing: -1.3px;
+  text-decoration: none;
+}
+.brand-mark {
+  width: 26px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.navlinks {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.navlinks > a:not(.btn) {
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  padding-block: 12px;
+}
+.navlinks > a:not(.btn)::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  bottom: 6px;
+  left: 0;
+  width: 0;
+  background: var(--purple);
+  transition: width 0.2s;
+}
+.navlinks > a:hover::after {
+  width: 100%;
+}
+.navlinks .btn {
+  background: var(--purple-deep);
+  color: #fff;
+  min-height: 42px;
+  padding: 10px 17px;
+  font-size: 11px;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.nav-toggle span,
+.nav-toggle span::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--purple-deep);
+  transition: transform 0.2s;
+}
+.nav-toggle span::after {
+  content: "";
+  transform: translateY(6px);
+}
+.nav-toggle span {
+  transform: translateY(-3px);
+}
+.nav-toggle[aria-expanded="true"] span {
+  transform: rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span::after {
+  transform: rotate(-90deg);
+}
+/* Hero: the signal field frames the inventory, never the headline. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #310d40;
+  color: #fff;
+  padding: 84px 0 78px;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse at 85% 48%, #8a05be60, transparent 57%);
+}
+.hero > .wrap {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero .eyebrow {
+  color: #e9c2ef;
+  margin-bottom: 27px;
+  font-size: 10px;
+}
+.hero h1 {
+  font-size: clamp(44px, 4.9vw, 65px);
+  line-height: 1.04;
+  margin-bottom: 26px;
+}
+.hero h1 em {
+  color: #ff9fc6;
+  font-weight: 400;
+}
+.hero p.lead {
+  font-size: 15px;
+  line-height: 1.85;
+  color: #ddcfe2;
+  max-width: 470px;
+  margin-bottom: 30px;
+}
+.hero-ctas {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.hero-note {
+  font-size: 10px;
+  color: #c6b3ce;
+  max-width: 420px;
+}
+.hero-visual {
+  position: relative;
+  isolation: isolate;
+  padding: 76px 14px 64px;
+  min-width: 0;
+}
+.signal-field {
+  position: absolute;
+  inset: -65px -100px;
+  z-index: -1;
+  pointer-events: none;
+}
+.signal-fallback,
+#hero-canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+.signal-fallback {
+  opacity: 0.65;
+}
+.signal-field.has-webgl .signal-fallback {
+  opacity: 0.16;
+}
+#hero-canvas {
+  opacity: 0.85;
+}
+.visual-chip {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+  padding: 12px 16px;
+  border-radius: 7px;
+  background: #512264;
+  border: 1px solid #a85bc666;
+  box-shadow: 0 12px 30px #20042f30;
+}
+.visual-chip strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+}
+.visual-chip small {
+  display: block;
+  font-size: 9px;
+  color: #d7badf;
+}
+.chip-icon {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffff12;
+  color: #ff9fc6;
+  font-size: 18px;
+}
+.chip-top {
+  top: 21px;
+  right: -5px;
+}
+.chip-bottom {
+  bottom: 10px;
+  left: -7px;
+  background: #eedff5;
+  color: var(--purple-deep);
+  border-color: #fff;
+}
+.chip-bottom small {
+  color: #725080;
+}
+.chip-bottom .chip-icon {
+  background: #dac2e8;
+  color: var(--purple-deep);
+}
+.gauge-card {
+  position: relative;
+  background: #fdf9ff;
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 30px 27px;
+  box-shadow: 7px 9px 0 #b993c7, 0 28px 65px #18082055;
+  transform: rotate(-2deg);
+}
+.gauge-card .cap {
+  font: 9px var(--mono);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gauge-card .cap::after {
+  content: "● ● ●";
+  font-size: 6px;
+  letter-spacing: 3px;
+  color: #c9aed5;
+}
+.gauge-card .fator {
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  max-width: 330px;
+  margin-bottom: 26px;
+}
+.gauge-track {
+  display: flex;
+  gap: 4px;
+  height: 9px;
+  margin-bottom: 9px;
+}
+.gauge-track > div {
+  flex: 1;
+  border-radius: 2px;
+}
+.gauge-labels {
+  display: flex;
+  justify-content: space-between;
+  font: 6px var(--mono);
+  color: #75617f;
+  margin-bottom: 23px;
+}
+.gauge-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 0;
+  border-top: 1px solid #e6ddea;
+  font-size: 11px;
+}
+.gauge-row .k {
+  color: #74607d;
+}
+.gauge-row .v {
+  font-family: var(--mono);
+  font-size: 12px;
+}
+.gauge-row:last-of-type .v {
+  color: var(--purple);
+}
+.gauge-verdict {
+  margin-top: 11px;
+  padding: 13px 14px;
+  border-radius: 5px;
+  background: #f6e6ef;
+  border-left: 2px solid var(--pink);
+  font-size: 10px;
+  line-height: 1.7;
+  color: #794460;
+}
+.gauge-verdict b {
+  color: #59233e;
+}
+/* Context and process */
+.statbar {
+  background: #eee4f1;
+  border-bottom: 1px solid #e0d1e5;
+}
+.statbar .wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-block: 35px;
+}
+.stat {
+  padding-inline: 30px;
+  border-right: 1px solid #d7c6de;
+}
+.stat:first-child {
+  padding-left: 0;
+}
+.stat:last-child {
+  border: 0;
+  padding-right: 0;
+}
+.stat .num {
+  font-family: var(--serif);
+  font-size: 45px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--purple-deep);
+  margin-bottom: 10px;
+}
+.stat .desc {
+  font-size: 12px;
+  color: #786280;
+  max-width: 265px;
+  line-height: 1.7;
+}
+#como-funciona {
+  background: #fff;
+}
+.step-card {
+  position: relative;
+  padding-top: 25px;
+  border-top: 1px solid #d9c3e3;
+}
+.step-card:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -20px;
+  top: -17px;
+  color: var(--purple);
+  background: #fff;
+  padding-inline: 6px;
+  font-size: 20px;
+}
+.step-card .n {
+  font: 11px var(--mono);
+  color: var(--purple);
+  margin-bottom: 23px;
+}
+.step-card h3 {
+  font-size: 26px;
+  margin: 24px 0 15px;
+}
+.step-card p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--slate);
+}
+.step-art {
+  height: 70px;
+  width: 104px;
+  color: var(--purple);
+}
+/* Comparison */
+.comparison {
+  background: #32133f;
+  color: #fff;
+  position: relative;
+}
+.comparison .section-head {
+  max-width: 660px;
+}
+.comparison .eyebrow {
+  color: #e0b6ed;
+}
+.compare {
+  border: 1px solid #ffffff22;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.compare-row {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr 1.12fr;
+}
+.compare-row > div {
+  padding: 23px 26px;
+  font-size: 14px;
+  border-bottom: 1px solid #ffffff18;
+  display: flex;
+  align-items: center;
+}
+.compare-row:last-child > div {
+  border-bottom: 0;
+}
+.compare-row > div:last-child {
+  background: #61367455;
+  border-left: 1px solid #ffffff18;
+}
+.compare-row.head > div {
+  font: 10px var(--mono);
+  letter-spacing: 0.035em;
+  color: #cbb5d4;
+  padding-block: 20px;
+}
+.compare-row.head > div:last-child {
+  font: 600 25px var(--serif);
+  color: #fff;
+}
+.compare-row .old {
+  color: #bba7c4;
+}
+.compare-row .new {
+  color: #f4dffb;
+  gap: 12px;
+}
+.compare-row .new::before {
+  content: "✓";
+  color: #ff9fc6;
+  font-size: 14px;
+}
+.compare-row:not(.head) > div:first-child {
+  color: #e2d0e9;
+}
+/* Care: editorial intro paired with four service entries */
+#bem-estar > .wrap {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 80px;
+  align-items: start;
+}
+#bem-estar .section-head {
+  margin: 0;
+}
+#bem-estar h2 {
+  font-size: 48px;
+}
+#bem-estar .grid-4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px 32px;
+}
+.benefit-card {
+  position: relative;
+  border-top: 1px solid var(--line);
+  padding-top: 23px;
+}
+.benefit-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: #ebdcf2;
+  color: var(--purple);
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+}
+.benefit-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.benefit-card h3 {
+  font-size: 25px;
+  line-height: 1.14;
+  margin-bottom: 13px;
+}
+.benefit-card p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--slate);
+}
+.novo-badge {
+  position: absolute;
+  right: 0;
+  top: 31px;
+  border: 1px solid #dcc6e8;
+  border-radius: 20px;
+  padding: 3px 8px;
+  color: var(--purple);
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.care-art {
+  margin-top: 35px;
+  width: 225px;
+  height: 125px;
+  color: var(--purple);
+  opacity: 0.85;
+}
+/* Plans */
+#precos {
+  background: #eee5f2;
+  border-block: 1px solid #e4d8e9;
+}
+#precos .section-head {
+  max-width: 700px;
+  margin-inline: auto;
+  text-align: center;
+}
+#precos .eyebrow {
+  justify-content: center;
+}
+#precos .section-head p {
+  margin-inline: auto;
+}
+.price-card {
+  position: relative;
+  padding: 35px 27px 33px;
+  border: 1px solid #d9c8e1;
+  background: #faf6fc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.price-card.featured {
+  background: #4b0369;
+  color: #fff;
+  border-color: #4b0369;
+  box-shadow: 0 20px 35px #4b036918;
+}
+.price-badge {
+  position: absolute;
+  top: -14px;
+  left: 26px;
+  background: #ffb6d2;
+  color: #4b0369;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.055em;
+  border-radius: 30px;
+  padding: 5px 12px;
+}
+.plano {
+  font-family: var(--serif);
+  font-size: 29px;
+  letter-spacing: -0.04em;
+  margin-bottom: 9px;
+}
+.porte {
+  font-size: 12px;
+  line-height: 1.8;
+  min-height: 43px;
+  color: var(--slate);
+  max-width: 240px;
+}
+.featured .porte,
+.featured .minimo {
+  color: #dcc4e5;
+}
+.valor {
+  font-family: var(--serif);
+  font-size: 56px;
+  line-height: 1.1;
+  letter-spacing: -0.055em;
+  margin-top: 27px;
+}
+.valor span {
+  display: block;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0;
+  margin-top: 8px;
+  color: var(--slate);
+}
+.featured .valor span {
+  color: #dcc4e5;
+}
+.minimo {
+  font-size: 12px;
+  color: var(--slate);
+  margin-top: 18px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.featured .minimo {
+  border-color: #ffffff25;
+}
+.price-card ul {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  margin-top: 24px;
+}
+.price-card li {
+  font-size: 13px;
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+}
+.price-card li::before {
+  content: "✓";
+  color: var(--purple);
+}
+.featured li::before {
+  color: #ff9fc6;
+}
+/* Guide */
+.guide-section {
+  padding: 85px 0;
+  background: #fff;
+}
+.magnet {
+  display: grid;
+  grid-template-columns: 145px 1fr auto;
+  gap: 36px;
+  align-items: center;
+  padding: 36px 42px;
+  background: #f5ebf8;
+  border: 1px solid #e9d8ef;
+  border-radius: 12px;
+}
+.magnet-text h3 {
+  font-size: 27px;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+  max-width: 570px;
+}
+.magnet-text p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--slate);
+  margin-top: 14px;
+  max-width: 440px;
+}
+.magnet .btn {
+  font-size: 11px;
+  white-space: nowrap;
+  background: var(--purple-deep);
+  color: #fff;
+}
+.guide-art {
+  width: 128px;
+  transform: rotate(-8deg);
+  filter: drop-shadow(7px 10px 0 #d7bee1);
+}
+/* Contact */
+section.lead {
+  position: relative;
+  overflow: hidden;
+  background: #f1e2ed;
+  padding: 100px 0;
+}
+.lead > .wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+.lead .eyebrow {
+  color: var(--purple);
+  margin-bottom: 22px;
+}
+.lead h2 {
+  font-size: 52px;
+}
+.lead p {
+  color: #775e78;
+  font-size: 14px;
+  margin-top: 26px;
+  line-height: 1.9;
+  max-width: 370px;
+}
+.contact-art {
+  width: 240px;
+  margin-top: 42px;
+  color: var(--purple-deep);
+}
+.lead-form {
+  padding: 34px;
+  background: #fff;
+  border: 1px solid #e5cfdf;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px #61315808;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 15px;
+}
+.field {
+  min-width: 0;
+}
+.field:nth-child(-n + 2) {
+  grid-column: 1/-1;
+}
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+.field input,
+.field select {
+  width: 100%;
+  min-width: 0;
+  height: 49px;
+  border: 1px solid #dfd3e4;
+  border-radius: 5px;
+  background: #fcf9fd;
+  color: var(--ink);
+  padding: 0 12px;
+  font-size: 13px;
+  transition: border-color 0.2s;
+}
+.field input::placeholder {
+  color: #86718e;
+}
+.field input:hover,
+.field select:hover {
+  border-color: #b68ec9;
+}
+.lead-form .btn {
+  grid-column: 1/-1;
+  width: 100%;
+  background: var(--purple-deep);
+  color: #fff;
+  font-size: 12px;
+  margin-top: 3px;
+}
+.fine {
+  grid-column: 1/-1;
+  font-size: 11px;
+  color: #7b6582;
+  text-align: center;
+  line-height: 1.7;
+  margin-top: -7px;
+}
+/* Closing */
+footer {
+  background: #2a1036;
+  color: #cbb5d6;
+  padding: 39px 0;
+}
+footer .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+footer .logo {
+  color: #fff;
+  font-size: 29px;
+}
+footer .wrap > div:last-child {
+  font-size: 10px;
+}
+.social {
+  display: flex;
+  gap: 10px;
+}
+.social a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #ffffff22;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s;
+}
+.social a:hover {
+  background: #713f85;
+}
+.social svg {
+  width: 14px;
+  height: 16px;
+  fill: currentColor;
+}
+.wa-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 45;
+  background: var(--purple-deep);
+  color: #fff;
+  border: 1px solid #b88ace;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 5px 20px #260a3933;
+  transition: transform 0.2s;
+}
+.wa-float[hidden] {
+  display: none;
+}
+.wa-float:hover {
+  transform: translateY(-4px);
+}
+.wa-float svg {
+  width: 25px;
+  height: 25px;
+  fill: currentColor;
+}
+/* Progressive enhancement: content remains visible without script. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal.is-visible {
+    animation: arrive 0.65s both;
+    animation-delay: var(--delay, 0ms);
+  }
+  @keyframes arrive {
+    from {
+      opacity: 0.3;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+@media (min-width: 1450px) {
+  .hero {
+    padding-block: 100px;
+  }
+  .hero h1 {
+    font-size: 68px;
+  }
+}
+@media (max-width: 1100px) {
+  .wrap {
+    padding-inline: 32px;
+  }
+  .hero > .wrap {
+    gap: 28px;
+  }
+  .hero h1 {
+    font-size: 54px;
+  }
+  .hero-ctas .btn {
+    font-size: 11px;
+    padding-inline: 15px;
+  }
+  .gauge-card {
+    padding: 25px 21px;
+  }
+  .hero-visual {
+    padding-inline: 0;
+  }
+  .chip-top {
+    right: 0;
+  }
+  .chip-bottom {
+    left: 0;
+  }
+  .grid-4 {
+    gap: 22px;
+  }
+  #bem-estar > .wrap {
+    gap: 45px;
+  }
+  #bem-estar h2 {
+    font-size: 41px;
+  }
+  .lead > .wrap {
+    gap: 50px;
+  }
+  .lead h2 {
+    font-size: 46px;
+  }
+  .magnet {
+    grid-template-columns: 105px 1fr;
+    gap: 28px;
+  }
+  .magnet .btn {
+    grid-column: 2;
+    justify-self: start;
+  }
+  .guide-art {
+    grid-row: 1/3;
+    width: 105px;
+  }
+  .price-card {
+    padding-inline: 22px;
+  }
+}
+@media (max-width: 800px) {
+  section {
+    padding: 80px 0;
+  }
+  .navlinks {
+    gap: 18px;
+  }
+  .navlinks > a:not(.btn) {
+    font-size: 11px;
+  }
+  .hero {
+    padding: 65px 0;
+  }
+  .hero > .wrap {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .hero h1 {
+    font-size: 44px;
+  }
+  .hero .eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.08em;
+  }
+  .hero p.lead {
+    font-size: 13px;
+  }
+  .hero-ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-note {
+    font-size: 9px;
+  }
+  .gauge-card {
+    padding: 22px 18px;
+  }
+  .gauge-card .fator {
+    font-size: 21px;
+  }
+  .gauge-card .cap {
+    font-size: 7px;
+  }
+  .gauge-labels {
+    font-size: 5px;
+  }
+  .gauge-row {
+    font-size: 10px;
+  }
+  .visual-chip {
+    padding: 10px 12px;
+  }
+  .visual-chip strong {
+    font-size: 10px;
+  }
+  .stat .num {
+    font-size: 38px;
+  }
+  .stat {
+    padding-inline: 20px;
+  }
+  .stat .desc {
+    font-size: 12px;
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 28px;
+  }
+  .step-card:nth-child(2)::after {
+    display: none;
+  }
+  #bem-estar > .wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  #bem-estar .section-head {
+    max-width: 600px;
+  }
+  .care-art {
+    display: none;
+  }
+  #bem-estar .grid-4 {
+    gap: 35px;
+  }
+  .price-card {
+    padding: 30px 16px;
+  }
+  .plano {
+    font-size: 25px;
+  }
+  .valor {
+    font-size: 46px;
+  }
+  .porte {
+    font-size: 11px;
+    min-height: 59px;
+  }
+  .minimo {
+    font-size: 11px;
+  }
+  .price-card li {
+    font-size: 12px;
+  }
+  .grid-3 {
+    gap: 12px;
+  }
+  .lead > .wrap {
+    gap: 35px;
+  }
+  .lead h2 {
+    font-size: 40px;
+  }
+  .lead-form {
+    padding: 25px 20px;
+    grid-template-columns: 1fr;
+  }
+  .field {
+    grid-column: 1/-1;
+  }
+  .compare-row > div {
+    padding: 20px 18px;
+    font-size: 13px;
+  }
+  footer .wrap {
+    flex-wrap: wrap;
+  }
+  footer .wrap > div:last-child {
+    margin-right: 45px;
+  }
+}
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 84px;
+  }
+  .wrap {
+    padding-inline: 24px;
+  }
+  nav .wrap {
+    height: 68px;
+  }
+  .logo {
+    font-size: 28px;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+  .navlinks {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    padding: 18px 24px 25px;
+    background: var(--mist);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 16px 30px #32113f14;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+  }
+  .navlinks.is-open {
+    display: flex;
+  }
+  .navlinks > a:not(.btn) {
+    font-size: 14px;
+    padding: 12px 0;
+  }
+  .navlinks .btn {
+    margin-top: 8px;
+    font-size: 12px;
+    min-height: 46px;
+  }
+  .hero {
+    padding: 52px 0 42px;
+  }
+  .hero > .wrap {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .hero .eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(40px, 10.8vw, 62px);
+    max-width: 500px;
+  }
+  .hero p.lead {
+    font-size: 14px;
+    max-width: 460px;
+  }
+  .hero-ctas {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .hero-ctas .btn {
+    font-size: 11px;
+    padding-inline: 14px;
+    flex-grow: 1;
+  }
+  .hero-note {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+  .signal-field {
+    inset: 0 -100px -40px;
+  }
+  .hero-visual {
+    width: min(100%, 430px);
+    margin: auto;
+    padding: 67px 12px 58px;
+  }
+  .gauge-card {
+    padding: 27px 23px;
+  }
+  .gauge-card .fator {
+    font-size: 25px;
+  }
+  .gauge-card .cap {
+    font-size: 8px;
+  }
+  .gauge-labels {
+    font-size: 6px;
+  }
+  .gauge-row {
+    font-size: 11px;
+  }
+  .chip-top {
+    right: 5px;
+    top: 12px;
+  }
+  .chip-bottom {
+    left: 2px;
+    bottom: 3px;
+  }
+  .visual-chip strong {
+    font-size: 11px;
+  }
+  .statbar .wrap {
+    grid-template-columns: 1fr;
+    padding-block: 9px;
+  }
+  .stat,
+  .stat:first-child,
+  .stat:last-child {
+    display: grid;
+    grid-template-columns: 125px 1fr;
+    gap: 15px;
+    align-items: center;
+    border: 0;
+    border-bottom: 1px solid #d7c6de;
+    padding: 23px 0;
+  }
+  .stat:last-child {
+    border: 0;
+  }
+  .stat .num {
+    font-size: 36px;
+    margin: 0;
+  }
+  .stat:last-child .num {
+    font-size: 28px;
+    white-space: nowrap;
+  }
+  .stat .desc {
+    max-width: none;
+    font-size: 12px;
+  }
+  section {
+    padding: 67px 0;
+  }
+  .section-head {
+    margin-bottom: 38px;
+  }
+  .section-head h2,
+  #bem-estar h2 {
+    font-size: 37px;
+  }
+  .section-head p {
+    font-size: 13px;
+    margin-top: 20px;
+  }
+  .section-head .eyebrow {
+    font-size: 10px;
+    margin-bottom: 18px;
+  }
+  .step-card h3 {
+    font-size: 25px;
+  }
+  .step-card p {
+    font-size: 13px;
+  }
+  .step-art {
+    height: 60px;
+    width: 88px;
+  }
+  .step-card .n {
+    margin-bottom: 18px;
+  }
+  .comparison .section-head {
+    max-width: 450px;
+  }
+  .compare {
+    border: 0;
+    border-radius: 0;
+  }
+  .compare-row {
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #ffffff25;
+  }
+  .compare-row > div {
+    border-bottom: 0;
+    padding: 16px 14px;
+    font-size: 12px;
+  }
+  .compare-row:not(.head) > div:first-child {
+    grid-column: 1/-1;
+    padding: 23px 0 11px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .compare-row > div:last-child {
+    border-left: 0;
+    border-radius: 5px;
+    align-items: flex-start;
+  }
+  .compare-row:not(.head) > div:nth-child(2) {
+    padding-left: 0;
+  }
+  .compare-row:not(.head) {
+    padding-bottom: 19px;
+    column-gap: 10px;
+  }
+  .compare-row.head > div:first-child {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .compare-row.head > div {
+    font-size: 10px;
+    padding: 13px 10px 16px 0;
+  }
+  .compare-row.head > div:last-child {
+    font-size: 23px;
+    background: none;
+    padding-left: 14px;
+  }
+  .compare-row .new::before {
+    font-size: 12px;
+  }
+  .compare-row:last-child {
+    border-bottom: 0;
+  }
+  #bem-estar .grid-4 {
+    gap: 34px 24px;
+  }
+  .benefit-card h3 {
+    font-size: 24px;
+  }
+  .benefit-card p {
+    font-size: 13px;
+  }
+  .benefit-icon {
+    margin-bottom: 18px;
+  }
+  .novo-badge {
+    font-size: 7px;
+    top: 35px;
+    padding: 2px 5px;
+  }
+  #precos .section-head {
+    text-align: left;
+  }
+  #precos .eyebrow {
+    justify-content: flex-start;
+  }
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .price-card {
+    padding: 30px;
+  }
+  .plano {
+    font-size: 30px;
+  }
+  .porte {
+    font-size: 11px;
+    min-height: 0;
+    max-width: none;
+  }
+  .valor {
+    font-size: 55px;
+    margin-top: 24px;
+  }
+  .valor span {
+    display: inline;
+    font-size: 10px;
+    margin-left: 7px;
+  }
+  .minimo {
+    font-size: 11px;
+  }
+  .price-card li {
+    font-size: 12px;
+  }
+  .price-card.featured {
+    box-shadow: 0 14px 25px #4b036918;
+  }
+  .guide-section {
+    padding: 56px 0;
+  }
+  .magnet {
+    padding: 30px 25px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .guide-art {
+    grid-row: auto;
+    width: 87px;
+    margin: 0 0 6px 8px;
+  }
+  .magnet-text h3 {
+    font-size: 29px;
+  }
+  .magnet-text p {
+    font-size: 12px;
+  }
+  .magnet .btn {
+    grid-column: auto;
+    justify-self: stretch;
+    min-height: 48px;
+    font-size: 12px;
+  }
+  section.lead {
+    padding: 65px 0;
+  }
+  .lead > .wrap {
+    grid-template-columns: 1fr;
+    gap: 33px;
+  }
+  .lead h2 {
+    font-size: 41px;
+    max-width: 450px;
+  }
+  .lead p {
+    font-size: 13px;
+    margin-top: 22px;
+    max-width: 420px;
+  }
+  .contact-art {
+    display: none;
+  }
+  .lead-form {
+    padding: 28px 23px;
+    gap: 20px;
+  }
+  .field input,
+  .field select {
+    font-size: 16px;
+    height: 52px;
+  }
+  .field label {
+    font-size: 12px;
+  }
+  .fine {
+    font-size: 10px;
+  }
+  .lead-form .btn {
+    font-size: 11px;
+  }
+  .social {
+    gap: 9px;
+  }
+  footer {
+    padding: 33px 0 80px;
+  }
+  footer .wrap {
+    gap: 25px;
+  }
+  footer .wrap > div:last-child {
+    flex-basis: 100%;
+    margin: 0;
+  }
+  .wa-float {
+    width: 48px;
+    height: 48px;
+    right: 16px;
+    bottom: 16px;
+  }
+}
+@media (max-width: 359px) {
+  .wrap {
+    padding-inline: 20px;
+  }
+  .grid-4,
+  #bem-estar .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .step-card::after {
+    display: none;
+  }
+  .hero-ctas {
+    flex-direction: column;
+  }
+  .hero h1 {
+    font-size: 39px;
+  }
+  .gauge-card {
+    padding-inline: 17px;
+  }
+  .gauge-labels {
+    font-size: 5px;
+  }
+  .stat,
+  .stat:first-child,
+  .stat:last-child {
+    grid-template-columns: 112px 1fr;
+  }
+  .valor span {
+    display: block;
+    margin-left: 0;
+  }
+  .lead-form {
+    padding-inline: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  nav,
+  .wa-float,
+  .signal-field {
+    display: none;
+  }
+  section,
+  .hero {
+    padding: 30px 0;
+  }
+  .hero,
+  .comparison,
+  footer,
+  .price-card.featured {
+    background: #fff;
+    color: #291533;
+  }
+  .hero p.lead,
+  .hero-note,
+  .compare-row .old,
+  .compare-row .new,
+  .compare-row:not(.head) > div:first-child {
+    color: #291533;
+  }
+  .price-card,
+  .step-card {
+    break-inside: avoid;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Navegação principal">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="EloVita — início"><svg class="brand-mark" viewBox="0 0 28 36" fill="none" aria-hidden="true"><ellipse cx="10" cy="14" rx="7" ry="11" transform="rotate(-28 10 14)" stroke="currentColor" stroke-width="2"/><ellipse cx="18" cy="22" rx="7" ry="11" transform="rotate(-28 18 22)" stroke="#FF4D8D" stroke-width="2"/></svg>EloVita</a>
+    <div class="navlinks" id="site-nav">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#bem-estar">Bem-estar</a>
+      <a href="#precos">Preços</a>
+      <a href="#contato" class="btn btn-primary">Falar com especialista</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-controls="site-nav" aria-expanded="false"><span></span></button>
+  </div>
+</nav>
+
+<main id="inicio">
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">NR-1 · Gestão de riscos psicossociais</div>
+      <h1>A fiscalização já começou.<br>Seu PGR está <em>pronto</em>?</h1>
+      <p class="lead">Diagnóstico anônimo, plano de ação com telemedicina e psicologia, e o PGR pronto para auditoria — sem comprar equipamento, sem planilha manual, ativo em dias.</p>
+      <div class="hero-ctas">
+        <a href="#contato" class="btn btn-primary">Falar com um especialista</a>
+        <a href="#como-funciona" class="btn btn-ghost">Ver como funciona</a>
+      </div>
+      <div class="hero-note">Sem instalação. Sem equipamento. Cadastro em menos de 1 dia.</div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="signal-field" aria-hidden="true"><svg class="signal-fallback" viewBox="0 0 620 460" preserveAspectRatio="none" fill="none"><g stroke="#cc79eb" stroke-width=".7"><path d="M-20 75 C100 5,165 315,295 185 S460 55,640 150"/><path d="M-20 89 C100 15,165 304,295 187 S460 64,640 159"/><path d="M-20 103 C100 25,165 293,295 189 S460 73,640 168"/><path d="M-20 117 C100 35,165 282,295 191 S460 82,640 177"/><path d="M-20 131 C100 45,165 271,295 193 S460 91,640 186"/><path d="M-20 145 C100 55,165 260,295 195 S460 100,640 195"/><path d="M-20 159 C100 65,165 249,295 197 S460 109,640 204"/><path d="M-20 173 C100 75,165 238,295 199 S460 118,640 213"/><path d="M-20 187 C100 85,165 227,295 201 S460 127,640 222"/><path d="M-20 201 C100 95,165 216,295 203 S460 136,640 231"/><path d="M-20 215 C100 105,165 205,295 205 S460 145,640 240"/><path d="M-20 229 C100 115,165 194,295 207 S460 154,640 249"/><path d="M-20 243 C100 125,165 183,295 209 S460 163,640 258"/><path d="M-20 257 C100 135,165 172,295 211 S460 172,640 267"/><path d="M-20 271 C100 145,165 161,295 213 S460 181,640 276"/><path d="M-20 285 C100 155,165 150,295 215 S460 190,640 285"/></g><g fill="#ff9fc6"><circle cx="124" cy="171" r="3"/><circle cx="485" cy="136" r="3"/><circle cx="450" cy="291" r="3"/></g></svg><canvas id="hero-canvas"></canvas></div>
+      <div class="visual-chip chip-top"><span class="chip-icon" aria-hidden="true">↗</span><span><strong>Risco identificado</strong><small>Inventário atualizado</small></span></div>
+      <div class="gauge-card">
+      <div class="cap">Exemplo — inventário de risco</div>
+      <div class="fator">Sobrecarga de trabalho · Organização do trabalho</div>
+      <div class="gauge-track">
+        <div style="background:#C9A6E0"></div>
+        <div style="background:#9F5FC7"></div>
+        <div style="background:#8A05BE"></div>
+        <div style="background:#FF4D8D"></div>
+        <div style="background:#B8005F"></div>
+      </div>
+      <div class="gauge-labels"><span>TRIVIAL</span><span>TOLERÁVEL</span><span>MODERADO</span><span>SUBSTANCIAL</span><span>INTOLERÁVEL</span></div>
+      <div class="gauge-row"><span class="k">Severidade</span><span class="v">4 / 5</span></div>
+      <div class="gauge-row"><span class="k">Probabilidade</span><span class="v">4.2 / 5</span></div>
+      <div class="gauge-row"><span class="k">Nível de risco</span><span class="v">16.8 / 25</span></div>
+      <div class="gauge-verdict"><b>Substancial.</b> Ação prioritária exigida no PGR conforme item 1.5.4.4.2 da NR-1.</div>
+      </div>
+      <div class="visual-chip chip-bottom"><span class="chip-icon" aria-hidden="true">✓</span><span><strong>Plano de ação pronto</strong><small>Conforme NR-1</small></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="statbar">
+  <div class="wrap">
+    <div class="stat"><div class="num">100%</div><div class="desc">das empresas CLT já são obrigadas, qualquer que seja o porte</div></div>
+    <div class="stat"><div class="num">4 mi</div><div class="desc">de afastamentos do trabalho por saúde em 2025 — o maior número em 5 anos</div></div>
+    <div class="stat"><div class="num">R$ 6,7 mil</div><div class="desc">multa máxima por infração identificada pela fiscalização do MTE</div></div>
+  </div>
+</div>
+
+<section id="como-funciona">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Como funciona</div>
+      <h2>Do link ao PGR, em quatro passos</h2>
+      <p>Nada de tablet, totem ou instalação. A coleta acontece direto no celular do colaborador.</p>
+    </div>
+    <div class="grid-4">
+      <div class="step-card"><div class="n">01</div><svg class="step-art" viewBox="0 0 104 76" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="12" width="78" height="45" rx="8"/><path d="M26 34h32m-9-8 9 8-9 8"/><circle cx="86" cy="17" r="12" fill="#f5e9fb"/><path d="m80 17 4 4 8-8"/></svg><h3>Link único</h3><p>A empresa recebe um link (ou QR code) para compartilhar por WhatsApp, e-mail ou mural — sem app para baixar.</p></div>
+      <div class="step-card"><div class="n">02</div><svg class="step-art" viewBox="0 0 104 76" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 55V29a18 18 0 0 1 36 0v26M6 37h50v27H6z"/><circle cx="31" cy="48" r="3"/><path d="M31 51v5M68 25h26M68 37h18M68 49h23"/></svg><h3>Coleta anônima</h3><p>Colaboradores respondem em ~3 minutos. Nenhuma resposta é identificável individualmente.</p></div>
+      <div class="step-card"><div class="n">03</div><svg class="step-art" viewBox="0 0 104 76" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="7" width="14" height="14" rx="2" fill="#f5e9fb" stroke="none"/><rect x="10" y="26" width="14" height="14" rx="2" fill="#e5c0f1" stroke="none"/><rect x="10" y="45" width="14" height="14" rx="2" fill="#ce8ae3" stroke="none"/><rect x="29" y="7" width="14" height="14" rx="2" fill="#e5c0f1" stroke="none"/><rect x="29" y="26" width="14" height="14" rx="2" fill="#ce8ae3" stroke="none"/><rect x="29" y="45" width="14" height="14" rx="2" fill="#8a05be" stroke="none"/><rect x="48" y="7" width="14" height="14" rx="2" fill="#ce8ae3" stroke="none"/><rect x="48" y="26" width="14" height="14" rx="2" fill="#8a05be" stroke="none"/><rect x="48" y="45" width="14" height="14" rx="2" fill="#ff4d8d" stroke="none"/><rect x="67" y="7" width="14" height="14" rx="2" fill="#8a05be" stroke="none"/><rect x="67" y="26" width="14" height="14" rx="2" fill="#ff4d8d" stroke="none"/><rect x="67" y="45" width="14" height="14" rx="2" fill="#ff4d8d" stroke="none"/></svg><h3>Matriz oficial</h3><p>A plataforma classifica cada fator por severidade × probabilidade, conforme a NR-1.</p></div>
+      <div class="step-card"><div class="n">04</div><svg class="step-art" viewBox="0 0 104 76" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 5h42l16 16v45H22zM64 5v17h16M32 33h34M32 43h22M32 53h16"/><circle cx="77" cy="54" r="15" fill="#f5e9fb"/><path d="m69 54 6 6 10-12"/></svg><h3>PGR pronto</h3><p>Inventário, plano de ação e política de canal de escuta — formatados para entrar direto no PGR e no eSocial.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="comparison">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">O que mudou</div>
+      <h2>Mais simples que qualquer alternativa manual</h2>
+    </div>
+    <div class="compare" role="table" aria-label="Comparação entre método manual e EloVita">
+      <div class="compare-row head" role="row"><div role="columnheader">Item</div><div role="columnheader">Método manual/consultoria</div><div role="columnheader">EloVita</div></div>
+      <div class="compare-row" role="row"><div role="cell">Custo por ciclo (100 colaboradores)</div><div class="old" role="cell">R$ 3.000 a R$ 30.000</div><div class="new" role="cell">A partir de R$ 1.200/mês</div></div>
+      <div class="compare-row" role="row"><div role="cell">Tempo de ativação</div><div class="old" role="cell">Semanas de entrevistas e oficinas</div><div class="new" role="cell">Menos de 1 dia</div></div>
+      <div class="compare-row" role="row"><div role="cell">Plano de ação</div><div class="old" role="cell">Documento estático, raramente atualizado</div><div class="new" role="cell">Vivo — atualiza com cada novo colaborador</div></div>
+      <div class="compare-row" role="row"><div role="cell">Bem-estar do time</div><div class="old" role="cell">Não incluso</div><div class="new" role="cell">Telemedicina e psicologia inclusas</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="bem-estar">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Plano de ação</div>
+      <h2>Diagnosticar não basta — a norma pede ação</h2>
+      <p>Depois do diagnóstico, os colaboradores têm acesso direto aos programas de bem-estar — e cada solicitação vira evidência do plano de ação no PGR.</p><svg class="care-art" viewBox="0 0 250 130" fill="none" aria-hidden="true"><path d="M0 66h50l15-24 21 50 23-73 24 90 20-43h97" stroke="#8A05BE" stroke-width="1.2"/><circle cx="126" cy="65" r="57" stroke="#d9bde7"/><circle cx="126" cy="65" r="42" stroke="#e6d1ee"/><circle cx="153" cy="66" r="5" fill="#ff4d8d"/></svg>
+    </div>
+    <div class="grid-4">
+      <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v5a4 4 0 0 0 8 0V3M4 3h4m4 0h4M10 12v3a5 5 0 0 0 10 0v-2"/><circle cx="20" cy="11" r="2"/></svg></div><h3>Telemedicina</h3><p>Consulta médica por vídeo para atestados, orientação e sintomas leves.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4c-4-2-7 3-4 6-4 3-1 8 3 7 0 4 5 4 5 1V6c0-3-4-4-4-2m6 0c4-2 7 3 4 6 4 3 1 8-3 7 0 4-3 4-3 1M8 9l5 2m0 3 4-2"/></svg></div><h3>Apoio psicológico</h3><p>Sessões com psicólogo(a) para estresse, ansiedade e conflitos.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v12H9l-5 4V5zM8 9h8m-8 4h5"/></svg></div><h3>Canal de escuta</h3><p>Canal confidencial para denúncia de assédio — cada vez mais exigido pela fiscalização.</p></div>
+      <div class="benefit-card novo"><div class="novo-badge">Novidade</div><div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 5 14 14M3 8l5-5m8 18 5-5M3 4l1-1m16 18 1-1M8 5l-3 3m11 3-5 5m8 0-3 3"/></svg></div><h3>Parceria com academia</h3><p>Acesso a rede de academias (modelo TotalPass/Wellhub) como benefício adicional de bem-estar físico.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="precos">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Preços</div>
+      <h2>Um plano para cada fase da empresa</h2>
+      <p>Sem taxa de instalação. Cancele quando quiser. Ver proposta comercial completa com preço por serviço avulso.</p>
+    </div>
+    <div class="grid-3">
+      <div class="price-card">
+        <div class="plano">Essencial</div>
+        <div class="porte">Micro e pequena empresa · até 49 colaboradores</div>
+        <div class="valor">R$ 15<span> /colaborador/mês</span></div>
+        <div class="minimo">mensalidade mínima R$ 280</div>
+        <ul>
+          <li>Diagnóstico completo</li>
+          <li>Matriz oficial de risco</li>
+          <li>PGR pronto para auditoria</li>
+        </ul>
+      </div>
+      <div class="price-card featured">
+        <div class="price-badge">Mais escolhido</div>
+        <div class="plano">Crescimento</div>
+        <div class="porte">Média empresa · 50 a 499 colaboradores</div>
+        <div class="valor">R$ 24<span> /colaborador/mês</span></div>
+        <div class="minimo">mensalidade a partir de R$ 1.200</div>
+        <ul>
+          <li>Tudo do Essencial</li>
+          <li>Telemedicina e psicologia inclusas</li>
+          <li>Canal de escuta e relatório por setor</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="plano">Corporativo</div>
+        <div class="porte">Grande empresa · 500+ colaboradores</div>
+        <div class="valor">R$ 20<span> /colaborador/mês</span></div>
+        <div class="minimo">mensalidade a partir de R$ 10.000</div>
+        <ul>
+          <li>Tudo do Crescimento</li>
+          <li>Multi-unidade e multi-CNPJ</li>
+          <li>SLA dedicado e API própria</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guide-section">
+  <div class="wrap">
+    <div class="magnet">
+<svg class="guide-art" viewBox="0 0 128 155" fill="none" aria-hidden="true"><path d="M6 0h114v155H6z" fill="#4b0369"/><path d="M14 0v155" stroke="#a65bc4"/><path d="M29 24h32M29 31h21" stroke="#ddb3ee" stroke-width="2"/><ellipse cx="62" cy="77" rx="18" ry="28" transform="rotate(-30 62 77)" stroke="#e6c9f2" stroke-width="2"/><ellipse cx="78" cy="95" rx="18" ry="28" transform="rotate(-30 78 95)" stroke="#ff86b3" stroke-width="2"/><path d="M29 133h59M29 139h39" stroke="#a96ec1"/></svg>
+      <div class="magnet-text">
+        <h3>Guia gratuito: o mínimo que sua empresa precisa fazer até estar 100% em dia com a NR-1</h3>
+        <p>Checklist prático + modelo de inventário de risco + modelo de plano de ação, direto no seu WhatsApp.</p>
+      </div>
+      <a href="https://wa.me/5548900000000?text=Ol%C3%A1%21%20Vi%20a%20p%C3%A1gina%20da%20EloVita%20e%20quero%20receber%20o%20guia%20gratuito%20sobre%20a%20NR-1." target="_blank" rel="noopener" id="magnetBtn" class="btn btn-pink">Quero o guia grátis</a>
+    </div>
+  </div>
+</section>
+
+<section class="lead" id="contato">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Fale com a gente</div>
+      <h2>Vamos ver se a EloVita encaixa na sua empresa</h2>
+      <p>Preencha os dados abaixo e a gente te chama no WhatsApp — sem compromisso, sem enrolação.</p><svg class="contact-art" viewBox="0 0 240 112" fill="none" aria-hidden="true"><rect x="3" y="15" width="136" height="75" rx="38" stroke="currentColor" stroke-width="1.2"/><rect x="96" y="15" width="136" height="75" rx="38" stroke="#ba75cd" stroke-width="1.2"/><path d="M92 52h47m-8-8 8 8-8 8" stroke="#8a05be" stroke-width="1.5"/><circle cx="46" cy="53" r="4" fill="#ff4d8d"/></svg>
+    </div>
+    <form class="lead-form" id="leadForm">
+      <div class="field"><label for="nome">Seu nome</label><input name="nome" autocomplete="name" id="nome" required placeholder="Como podemos te chamar"></div>
+      <div class="field"><label for="empresa">Empresa</label><input name="empresa" autocomplete="organization" id="empresa" required placeholder="Nome da empresa"></div>
+      <div class="field"><label for="porte">Nº de colaboradores</label>
+        <select name="porte" id="porte" required>
+          <option value="">Selecione</option>
+          <option>Até 9</option>
+          <option>10 a 49</option>
+          <option>50 a 99</option>
+          <option>100 a 499</option>
+          <option>500 ou mais</option>
+        </select>
+      </div>
+      <div class="field"><label for="whatsapp">WhatsApp</label><input name="whatsapp" type="tel" autocomplete="tel" id="whatsapp" required placeholder="(48) 90000-0000"></div>
+      <button type="submit" class="btn btn-primary">Quero falar com um especialista</button>
+      <div class="fine">Ao enviar, abrimos o WhatsApp com sua mensagem pronta para envio.</div>
+    </form>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="EloVita — início"><svg class="brand-mark" viewBox="0 0 28 36" fill="none" aria-hidden="true"><ellipse cx="10" cy="14" rx="7" ry="11" transform="rotate(-28 10 14)" stroke="currentColor" stroke-width="2"/><ellipse cx="18" cy="22" rx="7" ry="11" transform="rotate(-28 18 22)" stroke="#FF4D8D" stroke-width="2"/></svg>EloVita</a>
+    <div class="social">
+      <a href="https://instagram.com/elovita" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 448 512"><path d="M224 141c-63.6 0-115 51.4-115 115s51.4 115 115 115 115-51.4 115-115-51.4-115-115-115zm0 189.8c-41.3 0-74.8-33.5-74.8-74.8s33.5-74.8 74.8-74.8 74.8 33.5 74.8 74.8-33.5 74.8-74.8 74.8zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zM447.8 149.5c-1.6-33.7-9.2-63.6-33.7-88s-54.3-32.1-88-33.7C288.7 25.9 159.3 25.9 121.9 27.8c-33.6 1.6-63.5 9.2-88 33.6s-32 54.3-33.6 88C-1.6 187.3-1.6 316.7.3 354.1c1.6 33.7 9.2 63.6 33.7 88s54.3 32.1 88 33.7c37.6 1.9 167 1.9 204.4 0 33.7-1.6 63.6-9.2 88-33.7 24.4-24.4 32-54.3 33.6-88 1.9-37.5 1.9-166.8 0-204.6zM398.8 388c-7.3 18.4-21.5 32.6-40 39.9-27.7 11-93.6 8.4-124.3 8.4s-96.7 2.6-124.3-8.4c-18.4-7.3-32.6-21.5-39.9-40-11-27.7-8.4-93.6-8.4-124.3s-2.6-96.7 8.4-124.3c7.3-18.4 21.5-32.6 39.9-39.9 27.7-11 93.6-8.4 124.3-8.4s96.7-2.6 124.3 8.4c18.4 7.3 32.6 21.5 39.9 40 11 27.7 8.4 93.6 8.4 124.3s2.7 96.7-8.3 124.3z"/></svg></a>
+      <a href="https://linkedin.com/company/elovita" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.75h4V23h-4V8.75zM8.5 8.75h3.83v1.95h.05c.53-1 1.84-2.05 3.79-2.05 4.06 0 4.81 2.67 4.81 6.14V23h-4v-6.4c0-1.53-.03-3.49-2.13-3.49-2.14 0-2.47 1.67-2.47 3.38V23h-4V8.75z"/></svg></a>
+      <a href="https://facebook.com/elovita" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
+    </div>
+    <div>Gestão de riscos psicossociais · NR-1</div>
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" href="https://wa.me/5548900000000?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20EloVita." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C10 9 9.4 7.5 9.2 7c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.2 5 4.4.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4.2 15.1 3.7 13.6 3.7 12c0-4.6 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.7 8.3-8.3 8.3z"/></svg>
+</a>
+
+<script>
+// NOTA: trocar 5548900000000 pelo número comercial real da EloVita antes de publicar
+var numeroWhats = '5548900000000';
+
+document.getElementById('waFloat').href =
+  'https://wa.me/' +
+  numeroWhats +
+  '?text=' +
+  encodeURIComponent('Olá! Quero saber mais sobre a EloVita.');
+
+document.getElementById('magnetBtn').addEventListener('click', function (e) {
+  e.preventDefault();
+  var msg =
+    'Olá! Vi a página da EloVita e quero receber o guia gratuito sobre a NR-1.';
+  window.open(
+    'https://wa.me/' + numeroWhats + '?text=' + encodeURIComponent(msg),
+    '_blank',
+    'noopener,noreferrer'
+  );
+});
+
+document.getElementById('leadForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var nome = document.getElementById('nome').value.trim();
+  var empresa = document.getElementById('empresa').value.trim();
+  var porte = document.getElementById('porte').value;
+  var whatsapp = document.getElementById('whatsapp').value.trim();
+  if (!nome || !empresa || !porte || !whatsapp) return;
+  var msg =
+    'Olá! Sou ' +
+    nome +
+    ', da empresa ' +
+    empresa +
+    ' (' +
+    porte +
+    ' colaboradores). ' +
+    'Meu WhatsApp é ' +
+    whatsapp +
+    '. Quero saber mais sobre a EloVita para a NR-1.';
+  window.open(
+    'https://wa.me/' + numeroWhats + '?text=' + encodeURIComponent(msg),
+    '_blank',
+    'noopener,noreferrer'
+  );
+});
+</script>
+
+<script>
+(function () {
+  'use strict';
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.getElementById('site-nav');
+  const mobile = matchMedia('(max-width: 640px)');
+  function closeMenu(focus) {
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Abrir menu');
+    menu.classList.remove('is-open');
+    if (focus) toggle.focus();
+  }
+  toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    menu.classList.toggle('is-open', open);
+  });
+  menu
+    .querySelectorAll('a')
+    .forEach((link) => link.addEventListener('click', () => closeMenu(false)));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu.classList.contains('is-open'))
+      closeMenu(true);
+  });
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('nav')) closeMenu(false);
+  });
+  document.querySelector('nav').addEventListener('focusout', (event) => {
+    if (!event.currentTarget.contains(event.relatedTarget)) closeMenu(false);
+  });
+  mobile.addEventListener('change', () => closeMenu(false));
+
+  // A one-time entrance; never hide content waiting for JavaScript or scroll.
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          if (!reduceMotion.matches) entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12 }
+    );
+    document
+      .querySelectorAll(
+        '.section-head,.step-card,.benefit-card,.price-card,.magnet,.lead-form'
+      )
+      .forEach((item) => {
+        item.classList.add('reveal');
+        if (item.matches('.step-card,.benefit-card,.price-card')) {
+          item.style.setProperty(
+            '--delay',
+            (Array.from(item.parentNode.children).indexOf(item) % 4) * 65 + 'ms'
+          );
+        }
+        observer.observe(item);
+      });
+  }
+
+  // The form is the contact action here; keep its controls clear on small screens.
+  if ('IntersectionObserver' in window) {
+    const floatingContact = document.getElementById('waFloat');
+    new IntersectionObserver(entries => {
+      floatingContact.hidden = entries[0].isIntersecting;
+    }, {threshold: 0.05}).observe(document.getElementById('leadForm'));
+  }
+
+  // Optional GPU illustration. Signals resolve into ordered strands over 4.2s,
+  // then stop. Active time advances only while this illustration is visible.
+  // The SVG underneath is the complete fallback, including for reduced motion.
+  const canvas = document.getElementById('hero-canvas');
+  const field = canvas.parentElement;
+  const hero = document.querySelector('.hero');
+  let gl,
+    frame = 0,
+    visible = false,
+    lost = false,
+    elapsed = 0,
+    previous = 0;
+  const duration = 4200;
+  if (reduceMotion.matches) return;
+  try {
+    gl = canvas.getContext('webgl', {
+      alpha: true,
+      antialias: false,
+      depth: false,
+      powerPreference: 'low-power',
+    });
+  } catch (_) {
+    return;
+  }
+  if (!gl) return;
+  const vertexSource = `
+    attribute vec2 seed;
+    uniform float progress;
+    uniform float ratio;
+
+    varying float tint;
+    void main() {
+      float x = seed.x;
+      float row = seed.y;
+      float wave = sin(x * 7.0 + row * 3.0) * .23 + cos(x * 3.0 - row * 6.0) * .16;
+      float ordered = sin(x * 3.8) * .25 + row * .60;
+      float y = mix(wave + row * .68, ordered, progress);
+      float z = cos(x * 4.0 + row * 2.0);
+      gl_Position = vec4(x, y, 0.0, 1.0);
+      gl_PointSize = (1.4 + (z + 1.0) * .55) * ratio;
+      tint = (row + 1.0) * .5;
+    }`;
+  const fragmentSource = `
+    precision mediump float;
+    varying float tint;
+    void main() {
+      float d = length(gl_PointCoord - .5);
+      float alpha = 1.0 - smoothstep(.2, .5, d);
+      vec3 color = mix(vec3(.65,.30,.87), vec3(1.0,.57,.76), tint);
+      gl_FragColor = vec4(color, alpha * .78);
+    }`;
+  function compile(type, source) {
+    const shader = gl.createShader(type);
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      gl.deleteShader(shader);
+      return null;
+    }
+    return shader;
+  }
+  const vertex = compile(gl.VERTEX_SHADER, vertexSource);
+  const fragment = compile(gl.FRAGMENT_SHADER, fragmentSource);
+  if (!vertex || !fragment) return;
+  const program = gl.createProgram();
+  gl.attachShader(program, vertex);
+  gl.attachShader(program, fragment);
+  gl.linkProgram(program);
+  gl.deleteShader(vertex);
+  gl.deleteShader(fragment);
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+    gl.deleteProgram(program);
+    return;
+  }
+  gl.useProgram(program);
+  const points = [];
+  for (let row = 0; row < 27; row++) {
+    for (let col = 0; col < 135; col++)
+      points.push((col / 134) * 2 - 1, (row / 26) * 2 - 1);
+  }
+  const buffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(points), gl.STATIC_DRAW);
+  const seed = gl.getAttribLocation(program, 'seed');
+  gl.enableVertexAttribArray(seed);
+  gl.vertexAttribPointer(seed, 2, gl.FLOAT, false, 0, 0);
+  const progressUniform = gl.getUniformLocation(program, 'progress');
+  const ratioUniform = gl.getUniformLocation(program, 'ratio');
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+  function draw() {
+    if (lost || reduceMotion.matches) return;
+    const t = Math.min(elapsed / duration, 1);
+    gl.uniform1f(progressUniform, t * t * (3 - 2 * t));
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.drawArrays(gl.POINTS, 0, points.length / 2);
+  }
+  function resize() {
+    if (lost || reduceMotion.matches) return;
+    const rect = field.getBoundingClientRect();
+    const ratio = Math.min(
+      devicePixelRatio || 1,
+      1.5,
+      1000 / rect.width,
+      900 / rect.height
+    );
+    canvas.width = Math.max(1, Math.round(rect.width * ratio));
+    canvas.height = Math.max(1, Math.round(rect.height * ratio));
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.uniform1f(ratioUniform, ratio);
+    draw();
+  }
+  function stop() {
+    cancelAnimationFrame(frame);
+    frame = 0;
+    previous = 0;
+  }
+  function tick(now) {
+    frame = 0;
+    if (document.hidden || !visible || lost || reduceMotion.matches) {
+      previous = 0;
+      return;
+    }
+    if (!previous) previous = now;
+    // Limit GPU draws to 30fps; a hidden tab never accumulates elapsed time.
+    if (now - previous >= 32) {
+      elapsed = Math.min(duration, elapsed + Math.min(now - previous, 80));
+      previous = now;
+      draw();
+    }
+    if (elapsed < duration) frame = requestAnimationFrame(tick);
+  }
+  function start() {
+    if (
+      !frame &&
+      elapsed < duration &&
+      visible &&
+      !document.hidden &&
+      !lost &&
+      !reduceMotion.matches
+    )
+      frame = requestAnimationFrame(tick);
+  }
+  canvas.addEventListener('webglcontextlost', () => {
+    lost = true;
+    stop();
+    field.classList.remove('has-webgl');
+    canvas.hidden = true;
+  });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+    else start();
+  });
+  reduceMotion.addEventListener('change', () => {
+    stop();
+    canvas.hidden = reduceMotion.matches;
+    field.classList.toggle('has-webgl', !reduceMotion.matches && !lost);
+    if (!reduceMotion.matches) {
+      resize();
+      start();
+    }
+  });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(
+      (entries) => {
+        visible = entries[0].isIntersecting;
+        if (visible) start();
+        else stop();
+      },
+      { threshold: 0.05 }
+    ).observe(hero);
+  } else {
+    visible = true;
+  }
+  if ('ResizeObserver' in window) new ResizeObserver(resize).observe(field);
+  else window.addEventListener('resize', resize, { passive: true });
+  resize();
+  field.classList.add('has-webgl');
+  start();
+})();
+</script>
+</body>
+</html>
