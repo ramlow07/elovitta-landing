@@ -245,7 +245,7 @@ nav .wrap {
   background: var(--purple);
   transition: width 0.2s;
 }
-.navlinks > a:hover::after {
+.navlinks > a:not(.btn):hover::after {
   width: 100%;
 }
 .navlinks .btn {
@@ -254,6 +254,12 @@ nav .wrap {
   min-height: 42px;
   padding: 10px 17px;
   font-size: 11px;
+}
+.navlinks .btn:hover {
+  background: #5b1177;
+  color: #fff;
+  transform: none;
+  box-shadow: none;
 }
 .nav-toggle {
   display: none;
@@ -645,7 +651,7 @@ nav .wrap {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 80px;
-  align-items: start;
+  align-items: center;
 }
 #bem-estar .section-head {
   margin: 0;
